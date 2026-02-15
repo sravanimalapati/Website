@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sravani Lakshmi Malapati — Portfolio</title>
+
+<style>
+/* ===== THEMES ===== */
+body.theme-royal{
+  --bg1:#0b1220;
+  --bg2:#0a162a;
+  --accent:#cea948;
+  --accentSoft:rgba(206,169,72,0.16);
+  --accentStroke:rgba(206,169,72,0.45);
+  --topbar: rgba(10,14,23,.72);
+  --card:rgba(255,255,255,0.06);
+  --text:rgba(255,255,255,0.92);
+  --muted:rgba(255,255,255,0.66);
+  --stroke:rgba(255,255,255,0.14);
+}
+body.theme-warm{
+  --bg1:#f6f1e8;
+  --bg2:#efe7d7;
+  --accent:#b48722;
+  --accentSoft:rgba(180,135,34,0.14);
+  --accentStroke:rgba(20,20,20,0.18);
+  --topbar: rgba(246,241,232,.84);
+  --card:rgba(255,255,255,0.78);
+  --text:rgba(18,18,18,0.92);
+  --muted:rgba(18,18,18,0.68);
+  --stroke:rgba(18,18,18,0.10);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg1), var(--bg2));
+  overflow:hidden;
+}
+
+.topbar{
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(12px);
+  background: var(--topbar);
+  border-bottom:1px solid var(--stroke);
+  z-index:10;
+}
+
+.header{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.header h1{margin:0;font-size:20px}
+.mini{color:var(--muted);font-size:13px}
+
+.theme-toggle{
+  border:1px solid var(--accentStroke);
+  background:var(--accentSoft);
+  padding:6px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.tabs{
+  max-width:1100px;
+  margin:auto;
+  padding:8px 16px 14px;
+  display:flex;
+  gap:10px;
+}
+
+.tab{
+  border:1px solid var(--stroke);
+  padding:6px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.05);
+  cursor:pointer;
+  font-size:14px;
+}
+
+.tab.active{
+  background:var(--accentSoft);
+  border-color:var(--accentStroke);
+}
+
+.scroller{
+  height:calc(100vh - 120px);
+  overflow-y:auto;
+  scroll-snap-type:y mandatory;
+}
+
+section{
+  min-height:calc(100vh - 120px);
+  scroll-snap-align:start;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 16px;
+}
+
+.container{
+  width:min(1100px,100%);
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:20px;
+  padding:26px;
+}
+
+.photo img{
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  border-radius:16px;
+  border:1px solid var(--stroke);
+}
+
+h2{margin-top:0}
+
+.meta{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.btn-row{
+  margin-top:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.btn{
+  padding:10px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  border:1px solid var(--accentStroke);
+  background:var(--accentSoft);
+  color:var(--text);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:12px;
+}
+
+.contact-btn{
+  padding:12px;
+  text-align:center;
+  border:1px solid var(--stroke);
+  border-radius:14px;
+  text-decoration:none;
+  color:var(--text);
+}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body class="theme-royal">
+
+<div class="topbar">
+  <div class="header">
+    <div>
+      <h1>Sravani Lakshmi Malapati</h1>
+      <div class="mini">MS Data Analytics Engineering @ GMU • OCI • Data Engineering • GenAI</div>
+    </div>
+    <button class="theme-toggle" id="themeBtn">Theme</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-id="s1">About</button>
+    <button class="tab" data-id="s2">Education</button>
+    <button class="tab" data-id="s3">Projects</button>
+    <button class="tab" data-id="s4">Experience</button>
+    <button class="tab" data-id="s5">Skills</button>
+    <button class="tab" data-id="s6">Contact</button>
+  </div>
+</div>
+
+<div class="scroller" id="scroller">
+
+<!-- ABOUT -->
+<section id="s1">
+  <div class="container">
+    <div class="card">
+      <h2>Sravani Lakshmi Malapati</h2>
+      <p><strong>OCI-focused Data & Cloud Engineer building production-ready analytics and GenAI systems.</strong></p>
+      <p class="meta">Fairfax, VA • sravsmalapati3008@gmail.com • +1 (980) 451-6057</p>
+
+      <div class="btn-row">
+        <a class="btn" href="assets/sravani_resume.pdf" target="_blank">Download Resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/sravani-lakshmi-malapati-3127621b2/" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://github.com/sravanimalapati" target="_blank">GitHub</a>
+      </div>
+
+      <p style="margin-top:14px;">
+        I build end-to-end analytics and AI systems—from data pipelines and dashboards to applied GenAI solutions—using Python, SQL, R, PostgreSQL/PostGIS, and Oracle Cloud Infrastructure (OCI).
+      </p>
+    </div>
+
+    <div class="card photo">
+      <img src="assets/profile.jpg" alt="Sravani Lakshmi Malapati"/>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="s6">
+  <div class="container">
+    <div class="card">
+      <h2>Contact</h2>
+      <p>If you're hiring for Cloud / OCI / Data Engineering / GenAI roles, I’d love to connect.</p>
+
+      <div class="contact-grid">
+        <a class="contact-btn" href="mailto:sravsmalapati3008@gmail.com">Email</a>
+        <a class="contact-btn" href="https://www.linkedin.com/in/sravani-lakshmi-malapati-3127621b2/" target="_blank">LinkedIn</a>
+        <a class="contact-btn" href="https://github.com/sravanimalapati" target="_blank">GitHub</a>
+        <a class="contact-btn" href="assets/sravani_resume.pdf" target="_blank">Download Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+const scroller = document.getElementById("scroller");
+const tabs = document.querySelectorAll(".tab");
+
+tabs.forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+    document.getElementById(tab.dataset.id)?.scrollIntoView({behavior:"smooth"});
+    tabs.forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+  });
+});
+
+document.getElementById("themeBtn").addEventListener("click", ()=>{
+  document.body.classList.toggle("theme-royal");
+  document.body.classList.toggle("theme-warm");
+});
+</script>
+
+</body>
+</html>
